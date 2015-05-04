@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/israelst/scribble/issues"
   },
-  "homepage": "https://github.com/israelst/scribble"
+  "homepage": "https://github.com/israelst/scribble",
+  "dependencies": {
+    "d3": "^3.5.5"
+  }
 }
