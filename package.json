@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "browserify": "browserify index.js -o build.js",
+    "build": "npm run hint && npm run browserify",
     "hint": "jshint *.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -21,6 +23,7 @@
     "d3": "^3.5.5"
   },
   "devDependencies": {
+    "browserify": "^10.1.3",
     "jshint": "^2.7.0"
   }
 }
