@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "hint": "jshint *.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,5 +19,8 @@
   "homepage": "https://github.com/israelst/scribble",
   "dependencies": {
     "d3": "^3.5.5"
+  },
+  "devDependencies": {
+    "jshint": "^2.7.0"
   }
 }
