@@ -1,5 +1,6 @@
 var d3 = require("d3");
 
+
 function M(x, y){
     return "M" + x + "," + y;
 }
@@ -19,7 +20,13 @@ function scribble(){
 }
 
 window.addEventListener("load", function(){
-    d3.select("svg")
+    var width = 100,
+        height= 24;
+
+    d3.select("body")
+        .append("svg")
+        .attr("width", width)
+        .attr("height", height)
         .append("path")
         .attr("d", scribble());
 });
