@@ -9,11 +9,11 @@ function l(x, y){
     return "l" + x + "," + y;
 }
 
-function scribble(){
-    var commands = [M(0, 20)];
-    for(var i = 0; i <= 8; i++){
-        commands.push(l(10, -20));
-        commands.push(l(-5, 20));
+function scribble(width, height){
+    var commands = [M(0, height)];
+    for(var i = 0; i <= width; i += 5){
+        commands.push(l(12, -height));
+        commands.push(l(-7 + inc, height));
     }
     console.log(commands);
     return commands.join(" ");
@@ -28,7 +28,7 @@ window.addEventListener("load", function(){
         .attr("width", width)
         .attr("height", height)
         .append("path")
-        .attr("d", scribble());
+        .attr("d", scribble(width, height));
 });
 
 
