@@ -10,10 +10,12 @@ function l(x, y){
 }
 
 function scribble(width, height){
-    var commands = [M(0, height)];
+    var commands = [M(0, height)],
+        inc = 0;
     for(var i = 0; i <= width; i += 5){
-        commands.push(l(12, -height));
-        commands.push(l(-7 + inc, height));
+        inc = Math.round(Math.random() * 4);
+        commands.push(l(12, -height - inc));
+        commands.push(l(-7 + inc, height + inc ));
     }
     console.log(commands);
     return commands.join(" ");
