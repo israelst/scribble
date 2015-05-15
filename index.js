@@ -14,10 +14,10 @@ function scribble(width, height){
         x = 0,
         y = 0,
         incX = 0,
-        inc = 0;
+        incY = 0;
     for(var i = 0; i <= width - 12; i += 5){
         inc = Math.random() * height * 0.3;
-        y = height * 0.7 + inc;
+        y = height * 0.7 + incY;
 
         x = i + 12;
         incX = Math.random() * 4 - 2;
