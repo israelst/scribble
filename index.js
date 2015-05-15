@@ -11,6 +11,7 @@ function L(x, y){
 
 function scribble(width, height){
     var commands = [M(0, height)],
+        x = 0,
         y = 0,
         incX = 0,
         inc = 0;
@@ -18,10 +19,11 @@ function scribble(width, height){
         inc = Math.random() * height * 0.3;
         y = height * 0.7 + inc;
 
+        x = i + 12;
         incX = Math.random() * 4 - 2;
 
-        commands.push(L(i + 12, height - y));
-        commands.push(L(i + 12 + -7 + incX, y));
+        commands.push(L(x, height - y));
+        commands.push(L(x - 7 + incX, y));
     }
     commands.push(L(width, 0));
 
