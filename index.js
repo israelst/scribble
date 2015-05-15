@@ -17,6 +17,8 @@ function scribble(width, height){
         commands.push(l(12, -height - inc));
         commands.push(l(-7 + inc, height + inc ));
     }
+    commands.push(l(width, 0));
+
     console.log(commands);
     return commands.join(" ");
 }
