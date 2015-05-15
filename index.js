@@ -5,19 +5,25 @@ function M(x, y){
     return "M" + x + "," + y;
 }
 
-function l(x, y){
-    return "l" + x + "," + y;
+function L(x, y){
+    return "L" + x + "," + y;
 }
 
 function scribble(width, height){
     var commands = [M(0, height)],
+        y = 0,
+        incX = 0,
         inc = 0;
-    for(var i = 0; i <= width; i += 5){
-        inc = Math.round(Math.random() * 4);
-        commands.push(l(12, -height - inc));
-        commands.push(l(-7 + inc, height + inc ));
+    for(var i = 0; i <= width - 12; i += 5){
+        inc = Math.random() * height * 0.3;
+        y = height * 0.7 + inc;
+
+        incX = Math.random() * 4 - 2;
+
+        commands.push(L(i + 12, height - y));
+        commands.push(L(i + 12 + -7 + incX, y));
     }
-    commands.push(l(width, 0));
+    commands.push(L(width, 0));
 
     console.log(commands);
     return commands.join(" ");
