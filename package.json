@@ -1,7 +1,7 @@
 {
   "name": "scribble",
   "version": "0.0.0",
-  "description": "",
+  "description": "Because sometimes takes a lot time to figure out the beauty of the things we used to do at the beginning.",
   "main": "index.js",
   "scripts": {
     "browserify": "browserify index.js -o build.js",
