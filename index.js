@@ -9,15 +9,17 @@ function L(x, y){
     return "L" + x + "," + y;
 }
 
-function scribble(width, height){
+function scribble(width, height, marginFactor){
     var commands = [M(0, height)],
         x = 0,
         y = 0,
         incX = 0,
         incY = 0;
+
+    marginFactor = marginFactor || 0.3;
     for(var i = 0; i <= width - 12; i += 5){
-        inc = Math.random() * height * 0.3;
-        y = height * 0.7 + incY;
+        incY = Math.random() * height * marginFactor;
+        y = height * (1 - marginFactor) + incY;
 
         x = i + 12;
         incX = Math.random() * 4 - 2;
