@@ -29,7 +29,6 @@ function scribble(width, height, marginFactor){
     }
     commands.push(L(width, 0));
 
-    console.log(commands);
     return commands.join(" ");
 }
 
