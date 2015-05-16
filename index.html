@@ -4,14 +4,41 @@
     <meta charset="UTF-8" />
     <title>Scribble example</title>
     <script src="build.js" type="text/javascript"></script>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
     <style type="text/css">
+      body{
+        font-family: 'Open Sans';
+      }
+
+      header{
+        margin: 0 auto;
+        max-width: 40em;
+        text-align: center;
+      }
+
+      h1{
+        margin: 1em 0 .3em;
+        text-transform: lowercase;
+        font-weight: 100;
+        font-size: 4em;
+      }
+
       path{
+        stroke: black;
         stroke-width: 2;
-        stroke: #f00;
         fill: transparent;
       }
+
     </style>
 </head>
 <body>
+<header>
+  <h1>Scribble</h1>
+  <svg></svg>
+  <p>Because sometimes takes a lot time to figure out the beauty of the things we used to do at the beginning.</p>
+</header>
+<section id="examples">
+</section>
+
 </body>
 </html>
