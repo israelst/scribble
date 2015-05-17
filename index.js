@@ -9,26 +9,28 @@ function L(x, y){
     return "L" + x + "," + y;
 }
 
-function scribble(width, height, marginFactor){
+function scribble(width, height, marginFactor, stepUp, stepDown){
+    marginFactor = marginFactor || 0.3;
+    stepUp = stepUp || 12;
+    stepDown = stepDown || 7;
+
     var commands = [M(0, height)],
-        x = 0,
+        stepDiff = Math.abs(stepUp - stepDown),
         y = 0,
         incX = 0,
         incY = 0;
 
-    marginFactor = marginFactor || 0.3;
-    for(var i = 0; i <= width - 12; i += 5){
+    for(var i = 0; i <= width - Math.max(stepUp, stepDown); i += stepDown){
         incY = Math.random() * height * marginFactor;
         y = height * (1 - marginFactor) + incY;
 
-        x = i + 12;
-        incX = Math.random() * 4 - 2;
+        incX = Math.random() * stepDiff - stepDiff/2;
 
-        commands.push(L(x, height - y));
-        commands.push(L(x - 7 + incX, y));
+        commands.push(L(i + stepUp, height - y));
+        commands.push(L(i + stepDown + incX, y));
     }
-    commands.push(L(width, 0));
 
+    commands.push(L(width, 0));
     return commands.join(" ");
 }
 
