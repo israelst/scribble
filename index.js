@@ -42,6 +42,9 @@ window.addEventListener("load", function(){
         .attr("height", height)
         .append("path")
         .attr("d", scribble(width, height));
+
+    var path = document.querySelector("#sandbox svg path");
+    path.setAttribute("d", scribble(width * 10, height * 4));
 });
 
 
