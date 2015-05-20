@@ -38,12 +38,14 @@ window.addEventListener("load", function(){
     var width = 100,
         height= 24;
 
-    d3.select("body")
-        .append("svg")
+    d3.select("header svg")
         .attr("width", width)
         .attr("height", height)
         .append("path")
         .attr("d", scribble(width, height));
+
+    var path = document.querySelector("#sandbox svg path");
+    path.setAttribute("d", scribble(width * 10, height * 4));
 });
 
 
