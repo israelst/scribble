@@ -10,7 +10,7 @@ function L(x, y){
 }
 
 function scribble(width, height, marginFactor, stepUp, stepDown){
-    marginFactor = marginFactor || 0.3;
+    if(marginFactor === undefined){ marginFactor = 0.3; }
     stepUp = stepUp || 12;
     stepDown = stepDown || 7;
 
