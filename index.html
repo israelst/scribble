@@ -37,6 +37,11 @@
         box-sizing: border-box;
       }
 
+      #sandbox > div{
+        display: inline-block;
+        width: 49%;
+      }
+
       #sandbox svg{
         margin: 1em 0;
       }
@@ -56,12 +61,12 @@
 </header>
   <h2>Try it out.</h2>
   <div id="sandbox">
-    <div style="width: 49%; display: inline-block;">
+    <div>
       <label for="width">Width</label> <input id="width" name="width" type="number" value="100" />
       <label for="height">Height</label> <input id="height" name="height" type="number" value="24" />
       <label for="margin-factor">Margin factor</label> <input id="margin-factor" name="margin-factor" type="number" value="0.3" />
     </div>
-    <div style="width: 49%; display: inline-block;">
+    <div>
       <label for="step-up">Step up</label> <input id="step-up" name="step-up" type="number" value="12" />
       <label for="step-down">Step down</label> <input id="step-down" name="step-down" type="number" value="7" />
     </div>
