@@ -11,8 +11,11 @@ function L(x, y){
 
 function scribble(width, height, marginFactor, stepUp, stepDown){
     if(marginFactor === undefined){ marginFactor = 0.3; }
-    stepUp = stepUp || 12;
-    stepDown = stepDown || 7;
+    if(stepUp === undefined){ stepUp = 12; }
+    if(stepDown === undefined){ stepDown = 7; }
+    if(stepDown === 0 || stepUp === 0){
+        throw "Steps should be different than zero";
+    }
 
     var commands = [M(0, height)],
         stepDiff = Math.abs(stepUp - stepDown),
