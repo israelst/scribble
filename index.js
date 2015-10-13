@@ -10,9 +10,12 @@ function L(x, y){
 }
 
 function scribble(width, height, marginFactor, stepUp, stepDown){
-    marginFactor = marginFactor || 0.3;
-    stepUp = stepUp || 12;
-    stepDown = stepDown || 7;
+    if(marginFactor === undefined){ marginFactor = 0.3; }
+    if(stepUp === undefined){ stepUp = 12; }
+    if(stepDown === undefined){ stepDown = 7; }
+    if(stepDown === 0 || stepUp === 0){
+        throw "Steps should be different than zero";
+    }
 
     var commands = [M(0, height)],
         stepDiff = Math.abs(stepUp - stepDown),
@@ -34,18 +37,34 @@ function scribble(width, height, marginFactor, stepUp, stepDown){
     return commands.join(" ");
 }
 
+function value(elementId){
+    return +document.getElementById(elementId).value;
+}
+
 window.addEventListener("load", function(){
     var width = 100,
-        height= 24;
+        height= 24,
+        path = document.querySelector("#sandbox svg path");
+
+    function draw(){
+        var d = scribble(
+           value("width"),
+           value("height"),
+           value("margin-factor"),
+           value("step-up"),
+           value("step-down")
+        );
+        path.setAttribute("d", d);
+    }
+
+    d3.selectAll("input").on("change", draw);
+    draw();
 
     d3.select("header svg")
         .attr("width", width)
         .attr("height", height)
         .append("path")
         .attr("d", scribble(width, height));
-
-    var path = document.querySelector("#sandbox svg path");
-    path.setAttribute("d", scribble(width * 10, height * 4));
 });
 
 
